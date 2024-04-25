@@ -1,0 +1,49 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "base:VerifiedReview" "base:Airbus" "base:UnverifiedReview" "base:LeisurePassenger" "base:Aircraft" "base:Negative" "base:Passenger" "base:Review" "base:Service" "base:Positive" "base:Location" "base:Boing" "base:Country" "base:City" "base:Flight" "base:Airport" "base:BusinessPassenger" ; /*classes style*/
+	"base:flight1" -> "base:aircraft1" [ label = "base:operatedBy" ];
+	"base:flight1" -> "base:passeger1" [ label = "base:hasPassenger" ];
+	"base:hasService" -> "owl:topObjectProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:aircraft2" -> "base:flight2" [ label = "base:operates" ];
+	"base:aircraft1" -> "base:flight1" [ label = "base:operates" ];
+	"base:name" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:passeger2" -> "base:review2" [ label = "base:writesReview" ];
+	"base:review2" -> "base:passeger2" [ label = "base:reviewedBy" ];
+	"base:review2" -> "base:service2" [ label = "base:hasService" ];
+	"base:Airbus" -> "base:Boing" [ label = "owl:disjointWith" ];
+	"base:City" -> "base:Country" [ label = "owl:disjointWith" ];
+	"base:passeger1" -> "base:review1" [ label = "base:writesReview" ];
+	"base:review1" -> "base:passeger1" [ label = "base:reviewedBy" ];
+	"base:review1" -> "base:service1" [ label = "base:hasService" ];
+	"base:flight2" -> "base:aircraft2" [ label = "base:operatedBy" ];
+	"base:flight2" -> "base:passeger2" [ label = "base:hasPassenger" ];
+	"base:Negative" -> "base:Positive" [ label = "owl:disjointWith" ];
+	"base:BusinessPassenger" -> "base:LeisurePassenger" [ label = "owl:disjointWith" ];
+	"base:UnverifiedReview" -> "base:VerifiedReview" [ label = "owl:disjointWith" ];
+	"base:Review" -> "xsd:integer" [ label = "base:rating" ];
+	"base:Review" -> "xsd:string" [ label = "base:body" ];
+	"base:Service" -> "xsd:boolean" [ label = "base:wifiAndConnectivity" ];
+	"base:Passenger" -> "xsd:string" [ label = "base:country" ];
+	"base:Flight" -> "xsd:string" [ label = "base:id" ];
+	"base:Passenger" -> "base:Review" [ label = "base:writesReview" ];
+	"base:Service" -> "xsd:int" [ label = "base:foodAndBeverages" ];
+	"base:City" -> "base:Country" [ label = "base:locatedIn" ];
+	"base:Aircraft" -> "xsd:string" [ label = "base:model" ];
+	"base:Flight" -> "base:Passenger" [ label = "base:hasPassenger" ];
+	"base:Flight" -> "base:Location" [ label = "base:originatedFrom" ];
+	"base:Service" -> "xsd:int" [ label = "base:cabinStaffService" ];
+	"base:Review" -> "base:Service" [ label = "base:hasService" ];
+	"base:Flight" -> "base:Airport" [ label = "base:fliesFrom" ];
+	"base:Flight" -> "base:Location" [ label = "base:fliesToDestination" ];
+	"base:Service" -> "xsd:int" [ label = "base:valueForMoney" ];
+	"base:Service" -> "xsd:int" [ label = "base:seatComfort" ];
+	"base:Flight" -> "base:Aircraft" [ label = "base:operatedBy" ];
+	"base:Review" -> "base:Passenger" [ label = "base:reviewedBy" ];
+	"base:Service" -> "xsd:integer" [ label = "base:groundService" ];
+	"base:Review" -> "xsd:string" [ label = "base:title" ];
+	"base:Location" -> "xsd:string" [ label = "base:name" ];
+	"base:Flight" -> "xsd:dateTime" [ label = "base:date" ];
+	"base:Aircraft" -> "base:Flight" [ label = "base:operates" ];
+
+}

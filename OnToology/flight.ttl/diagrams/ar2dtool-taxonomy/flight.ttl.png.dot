@@ -1,0 +1,21 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:VerifiedReview" "base:Airbus" "base:UnverifiedReview" "base:LeisurePassenger" "base:Bad" "base:BusinessClass" "base:Aircraft" "base:Negative" "base:FirstClass" "base:Passenger" "base:Good" "base:Review" "base:Service" "base:Positive" "base:Location" "base:Boing" "base:EconomyClass" "base:TravelClass" "base:Country" "base:City" "base:BusinessPassenger" ; /*classes style*/
+	"base:UnverifiedReview" -> "base:Review" [ label = "rdfs:subClassOf" ];
+	"base:BusinessPassenger" -> "base:Passenger" [ label = "rdfs:subClassOf" ];
+	"base:Country" -> "base:Location" [ label = "rdfs:subClassOf" ];
+	"base:Positive" -> "base:Review" [ label = "rdfs:subClassOf" ];
+	"base:Boing" -> "base:Aircraft" [ label = "rdfs:subClassOf" ];
+	"base:FirstClass" -> "base:TravelClass" [ label = "rdfs:subClassOf" ];
+	"base:Bad" -> "base:Service" [ label = "rdfs:subClassOf" ];
+	"base:Airbus" -> "base:Aircraft" [ label = "rdfs:subClassOf" ];
+	"base:Good" -> "base:Service" [ label = "rdfs:subClassOf" ];
+	"base:EconomyClass" -> "base:TravelClass" [ label = "rdfs:subClassOf" ];
+	"base:City" -> "base:Location" [ label = "rdfs:subClassOf" ];
+	"base:BusinessClass" -> "base:TravelClass" [ label = "rdfs:subClassOf" ];
+	"base:VerifiedReview" -> "base:Review" [ label = "rdfs:subClassOf" ];
+	"base:Negative" -> "base:Review" [ label = "rdfs:subClassOf" ];
+	"base:LeisurePassenger" -> "base:Passenger" [ label = "rdfs:subClassOf" ];
+
+}
